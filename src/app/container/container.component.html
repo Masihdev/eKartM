@@ -1,0 +1,18 @@
+<div class="ekart--product--container">
+    <!-- <img [src]="product.pic" alt="">
+    <p>Name: {{ product.name }}</p>
+    <p>price: {{ '$' + product.price }}</p>
+    <p>color: {{ product.color }}</p>
+    <p>discountedPrice: ${{ getDiscountedPrice() }}</p>
+    <p>In stock: {{ product.inStock > 0? 'only '+product.inStock+' available' : 'not in stock' }}</p>
+    <button bind-disabled="!(product.inStock > 0)">buy now</button>
+     <input type="text" bind-value="name" (input)="getValue($event)"> -->
+    <!-- <p>name={{ name }}</p> -->
+    <!-- <br><br>
+    <button (click)="decrementValue()" [disabled]="addToCart < 1">-</button>
+    <span>{{ addToCart }}</span>
+    <button (click)="incrementValue()" [disabled]="addToCart == product.inStock">+</button> -->
+    <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+    <product-list [searchText]="searchText" #productListComponent></product-list>
+    <product-detail *ngIf="productListComponent.selectedProduct"></product-detail>
+</div> 
